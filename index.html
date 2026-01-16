@@ -14,6 +14,8 @@
 </head>
 
 <body>
+
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-light bg-light" id="navbar">
         <a class="navbar-brand" href="#">
@@ -37,7 +39,6 @@
     </nav>
 
     <main>
-
         <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
@@ -76,21 +77,57 @@
             <h2>Produtos mais Vendidos</h2>
 
             <div class="products-grid">
-                <i class="fa-solid fa-arrow-left"></i>
-                <div class="product-card">
-                    <img src="assets/produto1.png" alt="Luva de Boxe">
-                    <h3>Luva de Boxe Pro</h3>
-                    <span class="price">R$ 299,90</span>
-                    <button class="btn-primary">Comprar</button>
-                </div>
+                <div class="carousel">
+                    <i class="fa-solid fa-arrow-left" onclick="prevBtn()"></i>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="product-card">
+                                <img src="assets/produto1.png" alt="Luva de Boxe">
+                                <h3>Luva de Boxe Pro</h3>
+                                <span class="price">R$ 299,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
+                            <div class="product-card">
+                                <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
+                                <h3>Kimono Jiu-Jitsu</h3>
+                                <span class="price">R$ 499,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
+                            <div class="product-card">
+                                <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
+                                <h3>Kimono Jiu-Jitsu</h3>
+                                <span class="price">R$ 499,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
+                            <div class="product-card">
+                                <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
+                                <h3>Kimono Jiu-Jitsu</h3>
+                                <span class="price">R$ 499,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
+                            <div class="product-card">
+                                <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
+                                <h3>Kimono Jiu-Jitsu</h3>
+                                <span class="price">R$ 499,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
+                            <div class="product-card">
+                                <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
+                                <h3>Kimono Jiu-Jitsu</h3>
+                                <span class="price">R$ 499,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
+                            <div class="product-card">
+                                <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
+                                <h3>Kimono Jiu-Jitsu</h3>
+                                <span class="price">R$ 499,90</span>
+                                <button class="btn-primary">Comprar</button>
+                            </div>
 
-                <div class="product-card">
-                    <img src="assets/produto2.png" alt="Kimono Jiu-Jitsu">
-                    <h3>Kimono Jiu-Jitsu</h3>
-                    <span class="price">R$ 499,90</span>
-                    <button class="btn-primary">Comprar</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" onclick="nextBtn()"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right"></i>
             </div>
         </section>
 

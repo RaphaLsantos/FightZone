@@ -557,6 +557,38 @@ body.menuAberto::before {
     font-weight: bold;
 }
 
+.featured-products .products-grid i {
+    cursor: pointer;
+    font-size: 35px;
+    color: var(--accent-primary);
+
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+
+}
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.4s ease;
+}
+.product-card {
+    min-width: 250px; /* ❗ use valor fixo */
+    flex-shrink: 0;
+}
+
+
+
+
 /* DEPOIMENTOS */
 .testimonials {
     padding: 4rem 8%;
@@ -702,3 +734,12 @@ body.menuAberto::before {
         text-align: center;
     }
 }
+
+/* =========================
+   END CONTATO
+========================= */
+
+
+/*START CAROUSEL*/
+
+/*END CAROUSEL*/
