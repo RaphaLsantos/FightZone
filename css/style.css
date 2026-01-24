@@ -574,12 +574,14 @@ body.menuAberto::before {
 }
 
 .product-card img {
-    max-width: 100%;
+    max-width: 150px;
     margin-bottom: 1rem;
+
 }
 
 .product-card h3 {
     margin-bottom: 0.5rem;
+    color: var(--text-secondary);
 }
 
 .price {
