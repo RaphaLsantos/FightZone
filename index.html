@@ -24,12 +24,12 @@
 
         <div class="nav-content">
             <ul class="navbar-nav">
-                <li><a class="nav-link home-link" href="#">Home</a></li>
-                <li><a class="nav-link" href=".categories">Produtos</a></li>
-                <li><a class="nav-link" href="#">Benefícios</a></li>
-                <li><a class="nav-link" href="#">Prova Social</a></li>
-                <li><a class="nav-link" href="#">CTA</a></li>
-                <li><a class="nav-link" href="#">Contato</a></li>
+                <li><a class="nav-link home-link" href="#" aria-label="Ir para home">Home</a></li>
+                <li><a class="nav-link" href="#categorias" aria-label="Ir para categorias">Produtos</a></li>
+                <li><a class="nav-link" href="#benefits" aria-label="Ir para benefícios">Benefícios</a></li>
+                <li><a class="nav-link" href="#social-proof" aria-label="Ir para prova social">Prova Social</a></li>
+                <li><a class="nav-link" href="#cta-final" aria-label="Ir para CTA">CTA</a></li>
+                <li><a class="nav-link" href="#contact" aria-label="Ir para contato">Contato</a></li>
             </ul>
         </div>
 
@@ -49,8 +49,8 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Ver Produtos</a>
-                    <a href="#" class="btn-secondary">Ofertas</a>
+                    <a href="#featured-products" class="btn-primary" aria-label="Ver produtos">Ver Produtos</a>
+                    <a href="#" class="btn-secondary" onclick="mostrarAvisoOfertas(event)" aria-label="Ver ofertas">Ofertas</a>
                 </div>
             </div>
 
@@ -60,20 +60,35 @@
         </section>
 
         <!-- CATEGORIAS -->
-        <section class="categories">
+        <section class="categories" id="categorias">
             <h2>Categorias</h2>
 
             <div class="categories-grid">
-                <div class="category-card">Boxe</div>
-                <div class="category-card">Muay Thai</div>
-                <div class="category-card">Jiu-Jitsu</div>
-                <div class="category-card">MMA</div>
-                <div class="category-card">Capoeira</div>
+                <div class="category-card">
+                    <img class="img_category" src="./Assets/img/categorias/boxe.png" alt="">
+                    <span class="category-name">Boxe</span>
+                </div>
+                <div class="category-card">
+                    <img class="img_category" src="./Assets/img/categorias/muay.jpeg" alt="">
+                    <span class="category-name">Muay Thai</span>
+                </div>
+                <div class="category-card">
+                    <img class="img_category" src="./Assets/img/categorias/jiu.jpg" alt="">
+                    <span class="category-name">Jiu-Jitsu</span>
+                </div>
+                <div class="category-card">
+                    <img class="img_category" src="./Assets/img/categorias/mma.jpg" alt="">
+                    <span class="category-name">MMA</span>
+                </div>
+                <div class="category-card">
+                    <img class="img_category" src="./Assets/img/categorias/capoeira.jpg" alt="">
+                    <span class="category-name">Capoeira</span>
+                </div>
             </div>
         </section>
 
         <!-- PRODUTOS EM DESTAQUE -->
-        <section class="featured-products">
+        <section class="featured-products" id="featured-products">
             <h2>Produtos mais Vendidos</h2>
 
             <div class="products-grid">
@@ -112,12 +127,13 @@
                                 <button class="btn-primary">Comprar</button>
                             </div>
                             <div class="product-card">
-                                <img src="./Assets/img/Produtos/Gi de Jiu-Jitsu com faixa preta.png" alt="Kimono Jiu-Jitsu">
+                                <img src="./Assets/img/Produtos/Gi de Jiu-Jitsu com faixa preta.png"
+                                    alt="Kimono Jiu-Jitsu">
                                 <h3>Kimono Jiu-Jitsu</h3>
                                 <span class="price">R$ 600,00</span>
                                 <button class="btn-primary">Comprar</button>
                             </div>
-                     
+
 
                         </div>
                     </div>
@@ -127,7 +143,7 @@
         </section>
 
         <!--Benefícios-->
-        <section class="benefits">
+        <section class="benefits" id="benefits">
             <h2>Vantagens FightZone</h2>
 
             <div class="benefits-grid">
@@ -153,7 +169,7 @@
 
 
         <!-- PROVA SOCIAL -->
-        <section class="social-proof">
+        <section class="social-proof" id="social-proof">
             <h2>Quem vive a luta confia</h2>
 
             <div class="testimonials-grid">
@@ -177,21 +193,21 @@
 
 
         <!-- CTA FINAL -->
-        <section class="cta-final">
+        <section class="cta-final" id="cta-final">
             <div class="cta-content">
                 <h2>Entre no ritmo da luta</h2>
                 <p>
                     Treine com equipamentos profissionais e eleve seu nível
                     dentro e fora do tatame.
                 </p>
-                <a href="#" class="btn-primary">Ver Produtos</a>
+                <a href="#featured-products" class="btn-primary" aria-label="Ver produtos">Ver Produtos</a>
             </div>
         </section>
 
 
 
         <!-- CONTATO -->
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="contact-container">
 
                 <div class="contact-info">
@@ -209,10 +225,10 @@
                 </div>
 
                 <form class="contact-form">
-                    <input type="text" placeholder="Seu nome" required>
-                    <input type="email" placeholder="Seu email" required>
-                    <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Enviar mensagem</button>
+                    <input type="text" placeholder="Seu nome" name="nome" required>
+                    <input type="email" placeholder="Seu email" name="email" required>
+                    <textarea placeholder="Sua mensagem" name="mensagem" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary" onclick="enviarMsg(event)">Enviar mensagem</button>
 
                 </form>
 
@@ -220,6 +236,21 @@
         </section>
 
     </main>
+
+    <div class="avisoOfertas">
+        <span>Não há ofertas no momento!</span>
+    </div>
+
+    <div class="carregandoMsgContact">
+        <div class="conteudo-carregamento">
+            <span>Enviando mensagem...</span>
+            <i class="fa-solid fa-spinner"></i>
+        </div>
+        <div class="conteudo-sucesso">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>Enviado com sucesso!</span>
+        </div>
+    </div>
 
 
 

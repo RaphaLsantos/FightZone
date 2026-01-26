@@ -433,6 +433,7 @@ body.menuAberto::before {
     align-items: center;
     justify-content: space-between;
     padding: 5rem 8%;
+    padding-top: calc(5rem + 64px);
     background: linear-gradient(135deg,
             var(--bg-main),
             var(--bg-secondary));
@@ -482,18 +483,49 @@ body.menuAberto::before {
 
 .category-card {
     background-color: var(--bg-card);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 0.75rem;
     text-align: center;
     cursor: pointer;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, border-color 0.3s ease;
     color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
 }
 
 .category-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent-primary);
+}
+
+.category-card:hover .img_category {
+    display: flex;
+}
+
+.category-card:hover .category-name {
+    display: none;
+}
+
+.category-name {
+    display: block;
+    transition: 0.4s ease;
+}
+
+.img_category {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    transition: 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* BENEFÍCIOS */
@@ -522,6 +554,7 @@ body.menuAberto::before {
     border-radius: 1.25rem;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
 }
 
 .benefit-card i {
@@ -567,6 +600,8 @@ body.menuAberto::before {
     border: 1px solid var(--border-color);
     text-align: center;
     transition: transform 0.3s ease;
+    min-width: 250px;
+    flex-shrink: 0;
 }
 
 .product-card:hover {
@@ -576,7 +611,6 @@ body.menuAberto::before {
 .product-card img {
     max-width: 150px;
     margin-bottom: 1rem;
-
 }
 
 .product-card h3 {
@@ -618,33 +652,17 @@ body.menuAberto::before {
     transition: transform 0.4s ease;
 }
 
-.product-card {
-    min-width: 250px;
-    /* ❗ use valor fixo */
-    flex-shrink: 0;
-}
-
-
-
-
-/* DEPOIMENTOS */
-.testimonials {
-    padding: 4rem 8%;
-    background-color: var(--bg-secondary);
-    text-align: center;
-}
-
-.testimonials blockquote {
-    max-width: 600px;
-    margin: 0 auto;
-    font-style: italic;
-    color: var(--text-secondary);
-}
-
-.testimonials span {
+.price {
     display: block;
-    margin-top: 0.75rem;
-    color: var(--text-muted);
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+.featured-products .products-grid i {
+    cursor: pointer;
+    font-size: 35px;
+    color: var(--accent-primary);
 }
 
 /* CTA FINAL */
@@ -790,6 +808,8 @@ body.menuAberto::before {
     padding: 0.75rem 1rem;
     color: var(--text-primary);
     font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .contact-form input::placeholder,
@@ -801,6 +821,21 @@ body.menuAberto::before {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
+    box-shadow: 0 0 8px rgba(225, 6, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.contact-form input::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--accent-primary);
+    border-radius: 0.5rem 0 0 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .contact-form button {
@@ -825,7 +860,174 @@ body.menuAberto::before {
    END CONTATO
 ========================= */
 
+/* CARREGAMENTO MENSAGEM */
+.carregandoMsgContact {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: var(--bg-card);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
-/*START CAROUSEL*/
+.carregandoMsgContact.ativo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
 
-/*END CAROUSEL*/
+.conteudo-carregamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.conteudo-carregamento span {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.conteudo-carregamento i {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    animation: spin 1s linear infinite;
+}
+
+.conteudo-sucesso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.conteudo-sucesso i {
+    font-size: 2.5rem;
+    color: var(--success);
+    animation: checkScale 0.6s ease, pulse 2s ease-in-out 0.6s infinite;
+}
+
+.conteudo-sucesso span {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.carregandoMsgContact.sucesso .conteudo-carregamento {
+    opacity: 0;
+}
+
+.carregandoMsgContact.sucesso .conteudo-sucesso {
+    opacity: 1;
+}
+
+@keyframes checkScale {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* AVISO OFERTAS */
+.avisoOfertas {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: var(--bg-card);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.avisoOfertas.ativo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.avisoOfertas span {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsividade adicional */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 4%;
+        margin-top: 70px;
+    }
+
+    .cta-final {
+        padding: 3rem 4%;
+    }
+
+    .contact-container {
+        padding: 1.5rem;
+    }
+}
+
