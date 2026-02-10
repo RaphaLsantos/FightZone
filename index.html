@@ -18,8 +18,8 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-light bg-light" id="navbar">
-        <a class="navbar-brand" href="#">
-            <img src="Assets/img/navbar/logoNavBar.png" class="d-inline-block align-top logoFight" alt="logo">
+        <a class="navbar-brand" href="#" aria-label="FightZone - logo">
+            <img src="Assets/img/navbar/logoNavBar.png" class="d-inline-block align-top logoFight" alt="FightZone Logo">
         </a>
 
         <div class="nav-content">
@@ -40,7 +40,7 @@
 
     <main>
         <!-- HERO -->
-        <section class="hero">
+        <header class="hero">
             <div class="hero-content">
                 <h1>Equipamentos de combate para quem vive a luta</h1>
                 <p>
@@ -54,36 +54,36 @@
                 </div>
             </div>
 
-            <div class="hero-image">
+            <figure class="hero-image">
                 <img src="./Assets/img/home/luvasHome.png" alt="Equipamentos FightZone">
-            </div>
-        </section>
+            </figure>
+        </header>
 
         <!-- CATEGORIAS -->
         <section class="categories" id="categorias">
             <h2>Categorias</h2>
 
             <div class="categories-grid">
-                <div class="category-card">
+                <article class="category-card">
                     <img class="img_category" src="./Assets/img/categorias/boxe.png" alt="">
                     <span class="category-name">Boxe</span>
-                </div>
-                <div class="category-card">
+                </article>
+                <article class="category-card">
                     <img class="img_category" src="./Assets/img/categorias/muay.jpeg" alt="">
                     <span class="category-name">Muay Thai</span>
-                </div>
-                <div class="category-card">
+                </article>
+                <article class="category-card">
                     <img class="img_category" src="./Assets/img/categorias/jiu.jpg" alt="">
                     <span class="category-name">Jiu-Jitsu</span>
-                </div>
-                <div class="category-card">
+                </article>
+                <article class="category-card">
                     <img class="img_category" src="./Assets/img/categorias/mma.jpg" alt="">
                     <span class="category-name">MMA</span>
-                </div>
-                <div class="category-card">
+                </article>
+                <article class="category-card">
                     <img class="img_category" src="./Assets/img/categorias/capoeira.jpg" alt="">
                     <span class="category-name">Capoeira</span>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -93,51 +93,53 @@
 
             <div class="products-grid">
                 <div class="carousel">
-                    <i class="fa-solid fa-arrow-left" onclick="prevBtn()"></i>
+                    <button type="button" class="carousel-button carousel-prev" onclick="prevBtn()" aria-label="Produto anterior">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
                     <div class="carousel-viewport">
                         <div class="carousel-track">
-                            <div class="product-card">
+                            <article class="product-card">
                                 <img src="./Assets/img/Produtos/boxe.png" alt="Luva de Boxe">
                                 <h3>Luva de Boxe Pro</h3>
                                 <span class="price">R$ 299,90</span>
                                 <button type="submit" class="btn-primary">Comprar</button>
-                            </div>
-                            <div class="product-card">
+                            </article>
+                            <article class="product-card">
                                 <img src="./Assets/img/Produtos/roupaDeCapoeira.png" alt="Roupa de Capoeira">
                                 <h3>Abadá de Capoeira</h3>
                                 <span class="price">R$ 200,00</span>
                                 <button class="btn-primary">Comprar</button>
-                            </div>
-                            <div class="product-card">
+                            </article>
+                            <article class="product-card">
                                 <img src="./Assets/img/Produtos/aparador.png" alt="Aparador">
                                 <h3>Aparador</h3>
                                 <span class="price">189,90</span>
                                 <button class="btn-primary">Comprar</button>
-                            </div>
-                            <div class="product-card">
+                            </article>
+                            <article class="product-card">
                                 <img src="./Assets/img/Produtos/caneleira.png" alt="Caneleira">
                                 <h3>Caneleira</h3>
                                 <span class="price">R$ 199,90</span>
                                 <button class="btn-primary">Comprar</button>
-                            </div>
-                            <div class="product-card">
+                            </article>
+                            <article class="product-card">
                                 <img src="./Assets/img/Produtos/garrafa.png" alt="Garrafa">
                                 <h3>Garrafa</h3>
                                 <span class="price">R$ 49,90</span>
                                 <button class="btn-primary">Comprar</button>
-                            </div>
-                            <div class="product-card">
+                            </article>
+                            <article class="product-card">
                                 <img src="./Assets/img/Produtos/Gi de Jiu-Jitsu com faixa preta.png"
                                     alt="Kimono Jiu-Jitsu">
                                 <h3>Kimono Jiu-Jitsu</h3>
                                 <span class="price">R$ 600,00</span>
                                 <button class="btn-primary">Comprar</button>
-                            </div>
-
-
+                            </article>
                         </div>
                     </div>
-                    <i class="fa-solid fa-arrow-right" onclick="nextBtn()"></i>
+                    <button type="button" class="carousel-button carousel-next" onclick="nextBtn()" aria-label="Próximo produto">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -147,23 +149,23 @@
             <h2>Vantagens FightZone</h2>
 
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <article class="benefit-card">
                     <i class="fa-solid fa-medal"></i>
                     <h3>Qualidade Profissional</h3>
                     <p>Equipamentos testados por atletas e aprovados em treinos reais.</p>
-                </div>
+                </article>
 
-                <div class="benefit-card">
+                <article class="benefit-card">
                     <i class="fa-solid fa-truck-fast"></i>
                     <h3>Entrega Rápida</h3>
                     <p>Envios ágeis e seguros para todo o Brasil.</p>
-                </div>
+                </article>
 
-                <div class="benefit-card">
+                <article class="benefit-card">
                     <i class="fa-solid fa-shield-halved"></i>
                     <h3>Compra Segura</h3>
                     <p>Pagamento protegido e dados criptografados.</p>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -173,41 +175,45 @@
             <h2>Quem vive a luta confia</h2>
 
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>
-                        “Equipamentos resistentes, confortáveis e com padrão profissional.
-                        Uso diariamente nos treinos.”
-                    </p>
-                    <span>— Atleta de Muay Thai</span>
-                </div>
+                <article class="testimonial-card">
+                    <blockquote>
+                        <p>
+                            "Equipamentos resistentes, confortáveis e com padrão profissional.
+                            Uso diariamente nos treinos."
+                        </p>
+                        <footer>— Atleta de Muay Thai</footer>
+                    </blockquote>
+                </article>
 
-                <div class="testimonial-card">
-                    <p>
-                        “A FightZone entrega exatamente o que promete.
-                        Qualidade acima da média.”
-                    </p>
-                    <span>— Professor de Jiu-Jitsu</span>
-                </div>
+                <article class="testimonial-card">
+                    <blockquote>
+                        <p>
+                            "A FightZone entrega exatamente o que promete.
+                            Qualidade acima da média."
+                        </p>
+                        <footer>— Professor de Jiu-Jitsu</footer>
+                    </blockquote>
+                </article>
             </div>
         </section>
 
 
         <!-- CTA FINAL -->
         <section class="cta-final" id="cta-final">
-            <div class="cta-content">
+            <article class="cta-content">
                 <h2>Entre no ritmo da luta</h2>
                 <p>
                     Treine com equipamentos profissionais e eleve seu nível
                     dentro e fora do tatame.
                 </p>
                 <a href="#featured-products" class="btn-primary" aria-label="Ver produtos">Ver Produtos</a>
-            </div>
+            </article>
         </section>
 
 
 
         <!-- CONTATO -->
-        <section class="contact" id="contact">
+        <footer class="contact" id="contact">
             <div class="contact-container">
 
                 <div class="contact-info">
@@ -233,7 +239,7 @@
                 </form>
 
             </div>
-        </section>
+        </footer>
 
     </main>
 
